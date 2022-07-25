@@ -6,7 +6,7 @@ namespace WebApplication1
 {
     public static class SelectList
     {
-        public static List<SelectListItem> CreateCategoryList(string json) {
+        public static List<SelectListItem> CreateCategoryList(List<string> list) {
             List<string> ms= JsonConvert.DeserializeObject<List<string>>(json);
             var result =
                 ms.Select(v =>

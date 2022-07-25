@@ -1,8 +1,11 @@
+using WebApplication1.EfCore;
+using Microsoft.EntityFrameworkCore;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddRazorPages();
-
+builder.Services.AddDbContext<DEContext>(opt => opt.UseSqlServer(builder.Configuration.GetConnectionString("DummyDb")));
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
